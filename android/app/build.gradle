@@ -6,24 +6,32 @@ plugins {
 
 android {
     namespace "com.fouad.watchandearn"
-    compileSdkVersion 34
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 
     defaultConfig {
         applicationId "com.fouad.watchandearn"
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdk 21
+        targetSdk 34
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
     }
 
     buildTypes {
         release {
-            // مؤقتا غانخليوها بـ debug حتى يخرج الـ APK عاد نقدو الـ Keystore
             signingConfig signingConfigs.debug
         }
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // Gradle غايهز نسخة Kotlin أوتوماتيكياً من الـ Plugin
 }

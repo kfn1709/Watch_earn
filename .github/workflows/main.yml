@@ -22,15 +22,17 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
-      - name: Create local.properties
+      - name: Config Environments
         run: |
           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
-      - name: Clean and Install
+      - name: Clean and Sync
         run: |
           flutter clean
           flutter pub get
+          # هاد السطر هو اللي كيخلي Gradle يشوف Firebase و AdMob
+          flutter build apk --config-only
 
       - name: Build APK
         run: flutter build apk --release --no-shrink
