@@ -22,16 +22,17 @@ android {
         minSdk 21
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
 
     buildTypes {
         release {
+            // غانخدمو بـ debug signing مؤقتا باش يخرج الـ APK بلا Error ديال الكيستور
             signingConfig signingConfigs.debug
         }
     }
 }
 
 dependencies {
-    // Gradle غايهز نسخة Kotlin أوتوماتيكياً من الـ Plugin
+    // Flutter Gradle Plugin هو اللي كيتكلف بـ Kotlin stdlib و الـ Plugins (Firebase, الخ)
 }
