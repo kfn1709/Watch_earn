@@ -22,10 +22,3 @@ plugins {
 }
 
 include ":app"
-
-// هاد الجزء هو اللي كيخلي Firebase و AdMob يبانو لـ Gradle
-def flutterProjectRoot = rootProject.projectDir.parentFile
-def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins-dependencies')
-if (pluginsFile.exists()) {
-    apply from: "$flutterProjectRoot/.flutter-plugins-dependencies"
-}
