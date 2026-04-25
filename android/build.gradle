@@ -23,7 +23,10 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
-    project.evaluationDependsOn(':app')
+    // هادي ضرورية باش Gradle يتسنى :app حتى يتقاد عاد يبدا
+    if (project.name != 'app') {
+        project.evaluationDependsOn(':app')
+    }
 }
 
 tasks.register("clean", Delete) {

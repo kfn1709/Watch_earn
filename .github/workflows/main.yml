@@ -27,11 +27,10 @@ jobs:
           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Fix Plugins Bridge
-        run: flutter build apk --config-only # هاد السطر كيربط الـ Plugins بلا ما يبني
+      - name: Clean and Install
+        run: |
+          flutter clean
+          flutter pub get
 
       - name: Build APK
         run: flutter build apk --release --no-shrink
