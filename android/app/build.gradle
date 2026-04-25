@@ -27,12 +27,11 @@ android {
 
     buildTypes {
         release {
-            // غانخدمو بـ debug signing مؤقتا باش يخرج الـ APK بلا Error ديال الكيستور
             signingConfig signingConfigs.debug
         }
     }
 }
 
-dependencies {
-    // Flutter Gradle Plugin هو اللي كيتكلف بـ Kotlin stdlib و الـ Plugins (Firebase, الخ)
+flutter {
+    source '../..'
 }
