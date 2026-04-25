@@ -23,9 +23,3 @@ plugins {
 }
 
 include ":app"
-
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-  settingsDir.parentFile,
-  'android/app/build.gradle' // هاد السطر كيخلي Flutter يعاود يربط الـ Plugins راسو
-))
