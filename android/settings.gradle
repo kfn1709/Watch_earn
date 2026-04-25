@@ -24,6 +24,3 @@ plugins {
 }
 
 include ":app"
-
-// هاد السطر هو اللي غايحيد Error ديال "Plugin not found"
-apply from: "${settingsDir}/../.flutter-plugins-dependencies"
