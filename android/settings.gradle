@@ -18,6 +18,14 @@ pluginManagement {
 
 plugins {
     id "dev.flutter.flutter-gradle-plugin" version "1.0.0" apply false
+    id "com.google.gms.google-services" version "4.4.0" apply false
 }
 
 include ":app"
+
+// هاد الجزء هو اللي كيخلي Firebase و AdMob يبانو لـ Gradle
+def flutterProjectRoot = rootProject.projectDir.parentFile
+def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins-dependencies')
+if (pluginsFile.exists()) {
+    apply from: "$flutterProjectRoot/.flutter-plugins-dependencies"
+}
