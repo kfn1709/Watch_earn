@@ -24,9 +24,6 @@ plugins {
 
 include ":app"
 
-// السطر اللي كيجيب الـ Plugins أوتوماتيكيا بلا مشاكل JSON
+// السطر السحري لربط الـ Plugins أوتوماتيكياً في سيرفر GitHub
 def flutterProjectRoot = rootProject.projectDir.parentFile
-def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins-dependencies')
-if (pluginsFile.exists()) {
-    // حنا غانخليو Flutter يتكلف بالربط بلا ما نفرضو عليه ملف JSON يدوي
-}
+apply from: "$flutterProjectRoot/.flutter-plugins-dependencies"
