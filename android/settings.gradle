@@ -23,7 +23,3 @@ plugins {
 }
 
 include ":app"
-
-// السطر السحري لربط الـ Plugins أوتوماتيكياً في سيرفر GitHub
-def flutterProjectRoot = rootProject.projectDir.parentFile
-apply from: "$flutterProjectRoot/.flutter-plugins-dependencies"
